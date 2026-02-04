@@ -1,8 +1,13 @@
-import React from 'react'
+import { Breadcrumb, Layout, Menu, theme } from 'antd';
+
+const { Footer: LibFooter } = Layout;
+
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <LibFooter style={{ textAlign: 'center', borderTop: '1px solid #737373' }}>
+      Full stack courses ©{new Date().getFullYear()} All rights reserved.
+    </LibFooter>
   )
 }
 

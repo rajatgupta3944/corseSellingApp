@@ -11,9 +11,9 @@ interface PageLayoutProps {
 
 const PageLayout = ({children}: PageLayoutProps) => {
   return (
-    <Layout className='appLayout'>
+    <Layout className='appLayout' style={{ flex: 1 }} >
       <Header />
-      <Content className='appContent'>
+      <Content className='appContent' style={{ flex: 1, backgroundColor: "#030712", paddingBottom: "20px" }}>
         {children}
       </Content>
       <Footer />

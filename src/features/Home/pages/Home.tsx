@@ -1,5 +1,4 @@
 import { Flex, Image, Typography } from 'antd'
-import React from 'react'
 import { coursesPhoto } from '../../../assets'
 import CourseButton from '../../../components/common/CourseButton'
 import {useNavigate} from "react-router";
@@ -11,7 +10,7 @@ const Home = () => {
     navigate("/Courses")
   }
   return (
-    <Flex justify='space-between' style={{backgroundColor: "#292827"}}>
+    <Flex justify='space-between' style={{backgroundColor: "#1e2939"}}>
       <Flex vertical className='home-container'>
         <Text className='txt-size-40 flex-center'>Full Stack Course!!</Text>
         <Text className='color-gray txt-size-20 w-50 m-auto'>
