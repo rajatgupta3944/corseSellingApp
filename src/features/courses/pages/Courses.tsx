@@ -1,13 +1,16 @@
 import Flex from 'antd/es/flex'
 import React from 'react'
-import CourseList from '../../../data/courses.json'
+import rawCourseList from '../../../data/courses.json'
 import CourseCard from '../../../components/common/CourseCard'
 import { useAppDispatch } from '../../../app/hooks';
 import { addToCart } from '../../../features/cart/CartSlice';
+import type {Course} from '../types/course'
 
-const Courses = () => {
+const CourseList = rawCourseList as {courses: Course[]};
+
+const Courses: React.FC = () => {
   const dispatch = useAppDispatch();
-  const handleAddToCart = (course: any) => {
+  const handleAddToCart = (course: Course) => {
   dispatch(
   addToCart({
     id: course.id,
@@ -19,8 +22,8 @@ const Courses = () => {
 }
   return (
     <Flex wrap="wrap" gap={20} className='mt-20 ml-20'>
-      {CourseList?.courses.map((course: any) => (
-        <CourseCard key={course.id} {...course} onClick={() =>  handleAddToCart(course)} />
+      {CourseList?.courses.map((course) => (
+        <CourseCard key={course.id} course={course} onClick={() =>  handleAddToCart(course)} />
       ))}
     </Flex>
   )

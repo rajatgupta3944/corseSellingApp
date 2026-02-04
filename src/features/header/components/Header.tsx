@@ -39,8 +39,7 @@ const Header = () => {
       <Flex justify='space-between'>
       <Space>
         <Image src={LookfinityLogoIcon} alt="logo" />
-        <SearchBar className='searchBar' name="search" onChange={handleSearchChange} type="text" placeholder="Search..." />
-        
+        <SearchBar className='searchBar' name="search" onChange={handleSearchChange} type="text" placeholder="Search..." />      
       </Space>
       <Space>
       <Menu

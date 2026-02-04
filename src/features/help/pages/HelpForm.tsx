@@ -3,29 +3,10 @@ import CourseForm from '../../../components/common/CourseForm'
 import ReactHookInput from '../../../components/common/ReactHookInput'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from "@hookform/resolvers/yup"
-import * as yup from "yup"
 import { Flex, Space, Typography } from 'antd'
 import CourseButton from '../../../components/common/CourseButton'
-
-type FormValues = {
-  name: string
-  email: string
-  details: string
-}
-
-const schema = yup.object({
-  name: yup
-    .string()
-    .matches(/^[A-Za-z\s]+$/, 'Only alphabets are allowed')
-    .min(3, 'Minimum 3 characters required')
-    .required('Name is required'),
-  email: yup
-    .string()
-    .email('Invalid email address')
-    .required('Email is required'),
-  details: yup.string().required('Details are required'),
-})
-
+import { schema } from '../schema'
+import type { FormValues } from '../types'
 
 const HelpForm = () => {
   const { handleSubmit, reset, control } = useForm<FormValues>({

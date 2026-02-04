@@ -2,7 +2,7 @@ import { useController, type UseControllerProps, type FieldValues } from 'react-
 import CourseInput from './CourseInput'
 
 function ReactHookInput<T extends FieldValues>(
-  props: UseControllerProps<T> & { className?: string, label?: string, placeholder?: string, type?: string, rows?: number }
+  props: UseControllerProps<T> & { className?: string, label?: string, placeholder?: string, type?: any, rows?: number }
 ) {
   const { className, label, placeholder, type, rows, ...controllerProps } = props
   const { field, fieldState } = useController(controllerProps)

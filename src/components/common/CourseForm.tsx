@@ -4,7 +4,8 @@ import type { FormHTMLAttributes, ReactNode } from "react"
 type CourseFormProps = {
   children: ReactNode
   className?: string
-  onSubmit?: FormHTMLAttributes<HTMLFormElement>['onSubmit']
+  // onSubmit?: FormHTMLAttributes<HTMLFormElement>['onSubmit']
+  onSubmit?: (e: any) => void
 }
 
 const CourseForm = ({
