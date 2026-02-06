@@ -1,5 +1,5 @@
 import { Flex, Space, Typography } from 'antd'
-import React, { useRef } from 'react'
+import React from 'react'
 import CourseForm from '../../../components/common/CourseForm'
 import ReactHookInput from '../../../components/common/ReactHookInput'
 import { useForm } from 'react-hook-form'
@@ -9,7 +9,6 @@ import { schema } from '../schema'
 import CourseButton from '../../../components/common/CourseButton'
 
 const Signup = () => {
-  const ref = useRef(null);
   const {handleSubmit, reset, control} = useForm<Signup>({
     resolver: yupResolver(schema),
     defaultValues: {
@@ -31,7 +30,7 @@ const Signup = () => {
           <Typography.Title level={2}>Signup Form!!</Typography.Title>
         </Flex>
         <Space orientation='vertical' size={16} className='form-fields'>
-          <ReactHookInput name="name" type="text" rules={{ required: true }} control={control} ref={ref} placeholder='Enter your name...' />
+          <ReactHookInput name="name" type="text" rules={{ required: true }} control={control} placeholder='Enter your name...' />
           <ReactHookInput name="email" type="email" rules={{ required: true }} control={control} placeholder='Enter your email...' />
           <ReactHookInput name="dob" type="text" rules={{required: true}} control={control} placeholder='Enter your dob...' />
           <ReactHookInput name="phone" type="text" rules={{required: true}} control={control} placeholder="Enter your phone number..." />
