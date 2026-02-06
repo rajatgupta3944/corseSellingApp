@@ -8,16 +8,25 @@ import Home from "../features/Home/pages/Home";
 import Courses from "../features/courses/pages/Courses";
 import HelpForm from "../features/help/pages/HelpForm";
 import Cart from "../features/cart/pages/Cart";
+import PageLayout from "../components/layout/PageLayout";
+import ProtectedRoute from "./ProtectedRoute";
 
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<PageLayout />}>
+        <Route index element={<Home />} />
+        <Route path="courses" element={<Courses />} />
+        <Route path="help" element={<HelpForm />} />
+        <Route path="cart" element={
+          <ProtectedRoute>
+          <Cart />
+          </ProtectedRoute>} />
+      </Route>
+
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
-      <Route path="/courses" element={<Courses />} />
-      <Route path="/help" element={<HelpForm />} />
-      <Route path="/cart" element={<Cart />} />
+
     </Routes>
   )
 }

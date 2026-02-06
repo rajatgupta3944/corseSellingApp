@@ -10,15 +10,17 @@ import {
 import React, { useState } from "react";
 import { LookfinityLogoIcon } from "../../../assets";
 import SearchBar from "../../../components/common/SearchBar";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import CourseAvatar from "../../../components/common/CourseAvatar";
 import Profile from "../../profile/Profile";
+import CourseButton from "../../../components/common/CourseButton";
 
 const { Header: AntHeader } = Layout;
 
 const Header = () => {
   const [search, setSearch] = useState("");
   const location = useLocation();
+  const navigate = useNavigate()
 
   const items: MenuProps["items"] = [
     {
@@ -57,6 +59,8 @@ const Header = () => {
           />
         </Space>
         <Space>
+          <CourseButton label="Sign Up" onClick={() => navigate("/signup")} />
+          <CourseButton label="Login" onClick={() => navigate("/login")} />
           <Menu
             theme="dark"
             mode="horizontal"
