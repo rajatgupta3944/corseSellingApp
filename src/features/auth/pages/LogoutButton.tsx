@@ -1,13 +1,18 @@
 import { useAuth } from "react-oidc-context";
 import CourseButton from "../../../components/common/CourseButton";
 
+const logoutUri = import.meta.env.VITE_LOGOUT_URI;
+const clientId = import.meta.env.VITE_COGNITO_CLIENT_ID;
+const cognitoDomain = import.meta.env.VITE_COGNITO_AUTHORITY;
+
 const LogoutButton = () => {
   const auth = useAuth();
 
   const logout = () => {
-    const clientId = import.meta.env.VITE_COGNITO_CLIENT_ID;
-    const logoutUri = import.meta.env.VITE_LOGOUT_URI;
-    const cognitoDomain = import.meta.env.VITE_COGNITO_AUTHORITY;
+    const clientId = "38h4mk3scdp6ve3kpjckg8mba7";
+    const logoutUri = "http://localhost:5173";
+    const cognitoDomain =
+      "https://ap-south-1b3tmswmrq.auth.ap-south-1.amazoncognito.com";
 
     // clear local tokens
     auth.removeUser();
